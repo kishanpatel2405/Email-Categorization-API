@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "email-categorisation"
+version = "0.1.0"
+description = ""
+authors = ["kishan <kishan@deftboxssolutions.co.in>"]
+readme = "README.md"
+package-mode = false
+
+[tool.black]
+line-length = 125
+target_version = ['py310']
+exclude = '''
+(
+  /(
+    \.git
+    | \.mypy_cache
+    | \.pytest_cache
+    | htmlcov
+    | venv
+    | .venv
+    | logs
+    | temp
+  )/
+)
+'''
+
+[tool.isort]
+profile = "black"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+asyncpg = "^0.29.0"
+sqlalchemy = "^2.0.35"
+python-dotenv = "^1.0.1"
+fastapi = "^0.115.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.0"
+isort = "^5.13.2"
+pre-commit = "^3.7.1"
+flake8 = "^7.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
